@@ -1,0 +1,35 @@
+<div class="example-card">
+   <header>
+     <title>Login</title>
+   </header>
+   <div>
+     <form class="example-form">
+       <table class="example-full-width" cellspacing="0">
+         <tr>
+           <td>
+             <div class="example-full-width">
+             <input placeholder="Username" [(ngModel)]="username" name="username" required>
+             </div>
+           </td>
+         </tr>
+         <tr>
+         <td><div class="example-full-width">
+           <input placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+         </div></td>
+       </tr></table>
+     </form>
+     <div *ngIf="flag">Inició sesión correctamente!</div>
+   </div>
+   <div>
+     <button (click)="login()" color="primary">Login</button>
+   </div>
+   <div *ngIf="flag">
+     <table>
+       <tr *ngFor="let item of users">
+         <td>
+           {{item.username}}
+         </td>
+       </tr>
+     </table>
+   </div>
+ </div>
